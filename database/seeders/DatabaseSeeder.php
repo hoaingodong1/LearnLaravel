@@ -1,5 +1,5 @@
 <?php
-
+//DB nằm trong schemma
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -20,5 +20,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call(CustomersTableSeeder::class);
+       
     }
 }
+// Thực hiện tạo seeder khoảng 3 records cho mỗi bảng, (category và products)
+// Làm xong nhớ gửi bài lên cho thầy 
+ 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\TongController;
+use App\Http\Controllers\CreateTableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,4 +69,5 @@ use App\Http\Controllers\PageController;
 // Route::get('/',function (){
 //     return view('addRoom');
 // });
-Route::get('/',[PageController::class,'getIndex']);
+Route::get('/',[CreateTableController::class,'CreateTable']);
+
