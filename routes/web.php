@@ -69,5 +69,11 @@ use App\Http\Controllers\PageController;
 // Route::get('/',function (){
 //     return view('addRoom');
 // });
-Route::get('/',[CreateTableController::class,'CreateTable']);
+// Route::get('/',[CreateTableController::class,'CreateTable']);
+// Route::get('/', function(){
+//     $data=DB::table('customers')->get();
+//     dd($data);
 
+// });
+
+Route::get('/',[PageController::class,'getIndex']);

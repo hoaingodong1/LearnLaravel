@@ -22,7 +22,9 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
+// phải khai báo, chứa các trường của bảng đó, nếu khai báo thiếu một trường nào đó,
+// khi truy vấn
+// thì nó sẽ báo lỗi không tồn tại
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -31,6 +33,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        // tìm hiểu nhehn
     ];
 
     /**
@@ -42,3 +45,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+// Objetc relationship mapping modelling mô hình quan hệ đối tượng, 
+//biến các bảng thành các object, những table thành object, table-model
+// eloquent thì khai báo model, tốc độ xử lí chậm hơn so với query builder
+// ngắn gọn dễ hiểu 
