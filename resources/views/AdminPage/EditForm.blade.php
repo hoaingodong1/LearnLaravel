@@ -8,8 +8,9 @@
     </div>
     <div class="space50">&nbsp;</div>
     @include('error')
-    <div class="container">
-        <form action="admin-edit" method="POST" enctype="multipart/form-data">
+    @if(isset($product)){
+        <div class="container">
+        <form action="/admin-edit" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -78,6 +79,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+    @endif
     <div class="space50">&nbsp;</div>
 </div>
 

@@ -65,7 +65,6 @@ class PageController extends Controller
     
     public function postAdminEdit(Request $request){
         $id = $request->editId;
-
         $product = product::find($id);
         if($request->hasFile('editImage')){
             $file = $request -> file ('editImage');
