@@ -24,11 +24,14 @@ class addProductForm extends FormRequest
     public function rules()
     {
         return [
-            'hoten' => 'required','min:3','max:20',
-            'tuoi' => 'required|integer|min:16|max:100',
-            'ngaysinh' => 'required','date',
-            'cmnd' => 'required|digits_between:9,10',
-            'email' => 'required|email|ends_with:@passerellesnumeriques.org'
+            'name'=> 'required',
+            'image'=> 'required',
+            'description'=> 'required',
+            'unit_price'=> 'required',
+            'promotion_price'=> 'required',
+            'unit'=> 'required',
+            'new'=> 'required',
+            'id_type'=> 'required'
         ];
     }
     public function messages(){

@@ -76,7 +76,25 @@ use App\Http\Controllers\PageController;
 
 // });
 
-Route::get('/',[PageController::class,'getIndex']);
+// Route::get('/',[PageController::class,'getIndex']);
+// Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
+// Route::get('/admin-add-form',[PageController::class,'getAdminAdd']);
+// Route::post('/admin-add-form',[PageController::class,'postAdminAdd']);
+// trang chủ
+// Route::get('/trangchu',[PageController::class,'getIndex']);
+// Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
+
+//trang admin
+Route::get('/trangchu',[PageController::class,'getIndex']);
 Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
-Route::get('/admin-add-form',[PageController::class,'getAdminAdd']);
-Route::post('/admin-add-form',[PageController::class,'postAdminAdd']);
+
+//trang admin
+Route::get('/admin',[PageController::class, 'getAdminpage']);
+Route::post('/admin',[PageController::class,'postAdminAdd'])->name('admin-add-form');
+
+Route::get('/showadmin',[PageController::class, 'getIndexAdmin']);
+
+
+Route::get('/admin-edit-form/{id}',[PageController::class,'getAdminEdit']);
+Route::post('/admin-edit',[PageController::class,'postAdminEdit']);
+Route::post('/admin-delete/{id}',[PageController::class,'postAdminDelete']);

@@ -30,4 +30,5 @@ class Product extends Model
 
 // B1: tạo view add.blade.php
 //b2: tạo request
-//b3 model, b4: Xử lí controller. b5: Route b6dfshdghfh
+//b3 model, b4: Xử lí controller. 
+//b5: Route b6dfshdghfh
