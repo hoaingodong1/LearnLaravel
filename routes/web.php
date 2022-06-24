@@ -77,3 +77,6 @@ use App\Http\Controllers\PageController;
 // });
 
 Route::get('/',[PageController::class,'getIndex']);
+Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
+Route::get('/admin-add-form',[PageController::class,'getAdminAdd']);
+Route::post('/admin-add-form',[PageController::class,'postAdminAdd']);

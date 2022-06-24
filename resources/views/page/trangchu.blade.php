@@ -1,8 +1,5 @@
 @extends ('master')
 @section('content')
-@php
-	$totalOfProducts = count($)
-@endphp
 <div class="rev-slider">
     <div class="fullwidthbanner-container">
         <div class="fullwidthbanner">
@@ -52,11 +49,11 @@
                                     </div>
 
                                     <div class="row">
-                                        @foreach($new_product as $new)
+                                    @foreach($new_product as $new)
                                         <div class="col-sm-3">
                                             <div class="single-item">
                                                 <div class="single-item-header">
-                                                    <a href="product.html"><img src="source/image/product/{{$new->image}}" alt=""></a>
+                                                    <a href="product.html"><img src="source/image/product/{{$new->image}}" height="320" weight="270" alt=""></a>
                                                 </div>
                                                 <div class="single-item-body">
                                                     <p class="single-item-title">{{$new->name}}</p>
@@ -76,6 +73,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row"{{$new_product->links("pagination::bootstrap-4")}}</div>
                         </div> <!-- .beta-products-list -->
 
                         <div class="space50">&nbsp;</div>

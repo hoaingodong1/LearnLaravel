@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class signupRequest extends FormRequest
+class addProductForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,12 @@ class signupRequest extends FormRequest
     public function rules()
     {
         return [
-           
-            'name'=> 'required',
-            'image'=> 'required',
-            'description'=> 'required',
-            'unit_price'=> 'required',
-            'promotion_price'=> 'required',
-            'unit'=> 'required',
-            'new'=> 'required',
-            'id_type'=> 'required'
+            'hoten' => 'required','min:3','max:20',
+            'tuoi' => 'required|integer|min:16|max:100',
+            'ngaysinh' => 'required','date',
+            'cmnd' => 'required|digits_between:9,10',
+            'email' => 'required|email|ends_with:@passerellesnumeriques.org'
         ];
-        
     }
     public function messages(){
         return[
