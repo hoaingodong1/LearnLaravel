@@ -24,9 +24,7 @@ class CustomersTableSeeder extends Seeder
                 'gender'=>$fake->name,
                 'email' =>$fake->unique->email,
                 'phone' => $fake->phoneNumber,
-                'address' => $fake ->address
-                // 'created_at' => new DateTime,
-                // 'updated_at' => new DateTime,
+                'address' => $fake ->address,
             ]);
         }
     }

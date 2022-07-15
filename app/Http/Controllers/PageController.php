@@ -18,7 +18,6 @@ class PageController extends Controller
     }
     public function getLoaiSp($type){
         $type_product=ProductType::all();
-
         $sp_theoloai=Product::where('id_type',$type)->get();
         $sp_khac=Product::where('id_type','<>',$type)->paginate(3);
         return view('page.loai_sanpham',compact('sp_theoloai','type_product','sp_khac'));
@@ -31,7 +30,7 @@ class PageController extends Controller
         return view('AdminPage.Admin', compact('products')); 
     }
     public function postAdminAdd(Request $request){
-        $product= new Product();
+        $product = new Product();
         if ($request->hasFile('inputImage')){
             $file = $request -> file ('inputImage');
             $fileName=$file->getClientOriginalName('inputImage');
@@ -86,8 +85,16 @@ class PageController extends Controller
         return redirect('/showadmin');
     }
     public function postAdminDelete($id){
-        $product =product::find($id);
+        $product =  product::find($id);
         $product->delete();
         return redirect('/showadmin');
 }
+public function getAddToCart(Request $req, $id){				
+    $product = Product::find($id);				
+    $oldCart = Session('cart')?Session::get('cart'):null;				
+    $cart = new Cart($oldCart);				
+    $cart->add($product,$id);				
+    $req->session()->put('cart', $cart);				
+    return redirect()->back();				
+}				
 }

@@ -32,3 +32,13 @@ class Product extends Model
 //b2: tạo request
 //b3 model, b4: Xử lí controller. 
 //b5: Route b6dfshdghfh
+
+// Objetc relationship mapping modelling mô hình quan hệ đối tượng, 
+//biến các bảng thành các object, những table thành object, table-model
+// eloquent thì khai báo model, tốc độ xử lí chậm hơn so với query builder
+// ngắn gọn dễ hiểu 
+// một nhiều và thuộc về belong to, hasmany
+// trong product chứa function product-type, ... 
+
+
+// Model chính là các bảng trong database

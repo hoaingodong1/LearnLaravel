@@ -6,7 +6,9 @@
     <div class="pull-left">
         <h2>Edit product</h2>
     </div>
-    <div class="space50">&nbsp;</div>
+    <div class="space50">&nbsp;
+        
+    </div>
     @include('error')
     @if(isset($product)){
         <div class="container">
@@ -70,7 +72,7 @@
 
             <div class="form-group">
                 <label for='editDescription'>Description</label>
-                <textarea name="editDescription" required>{{$product->description}}</textarea>
+                <textarea name="editDescription" id="summary-ckeditor" name="summary-ckeditor" required>{{$product->description}}</textarea>
                 <script>
                     CKEDITOR.replace('editDescription');
                 </script>

@@ -6,7 +6,7 @@
         <h2>Add product</h2>
     </div>
     <div class="space50">&nbsp;</div>
-    @include('error')
+    <!-- @include('error') -->
     <div class="container">
         <form action="{{route('admin-add-form')}}" method="post" enctype="multipart/form-data">
             @csrf
@@ -70,12 +70,21 @@
 
             <div class="form-group">
                 <label for='inputDescription'>Description</label>
-                <textarea name="inputDescription" required></textarea>
+                <textarea name="inputDescription" id="summary-ckeditor" name="summary-ckeditor" required></textarea>
                 <script>
                 CKEDITOR.replace('inputDescription');
                 </script>
             </div>
-
+            <!-- import javascript -->
+            <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+            <script>
+                CKEDITOR.replace( 'summary-ckeditor' );
+            </script>
+            <!-- cnd -->
+            <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+            <script>
+                CKEDITOR.replace( 'summary-ckeditor' );
+            </script>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 

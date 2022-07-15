@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\TongController;
 use App\Http\Controllers\CreateTableController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -76,11 +78,15 @@ use App\Http\Controllers\PageController;
 
 // });
 
-// Route::get('/',[PageController::class,'getIndex']);
-// Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
-// Route::get('/admin-add-form',[PageController::class,'getAdminAdd']);
-// Route::post('/admin-add-form',[PageController::class,'postAdminAdd']);
+
 // trang chủ
+Route::get('homepage',[PageController::class,'getIndex']);
+Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
+Route::get('/admin-add-form',[PageController::class,'getAdminAdd']);
+Route::post('/admin-add-form',[PageController::class,'postAdminAdd']);
+
+
+// //trang admin
 // Route::get('/trangchu',[PageController::class,'getIndex']);
 // Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
 
@@ -98,3 +104,17 @@ Route::get('/showadmin',[PageController::class, 'getIndexAdmin']);
 Route::get('/admin-edit-form/{id}',[PageController::class,'getAdminEdit']);
 Route::post('/admin-edit',[PageController::class,'postAdminEdit']);
 Route::post('/admin-delete/{id}',[PageController::class,'postAdminDelete']);
+
+//register
+Route::get('/register', function () {return view('users.register');
+    });
+Route::post('/register',[UserController::class,'Register']);
+//login 
+Route::get('/login', function () {return view('users.login');						
+    });		
+Route::post('/login',[UserController::class,'Login']);
+Route::get('/logout',[UserController::class,'Logout']);
+
+//shopping basket
+Route::get('add-to-cart/{id}', [PageController::class, 'getAddToCart'])->name('themgiohang');												
+Route::get('del-cart/{id}', [PageController::class, 'getDelItemCart'])->name('xoagiohang');												
